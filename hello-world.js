@@ -2,7 +2,7 @@ const log = require('pretty-log');
 const http = require('node:http');
 
 const port = 80;
-const hostname = "http://127.0.0.1";
+const hostname = "127.0.0.1";
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -10,6 +10,6 @@ const server = http.createServer((req, res) => {
   res.end('Hello, World!\n');
 });
 
-server.listen(port, () => {
+server.listen(port, hostname, () => {
   log.success(`Server running at http://${hostname}:${port}/`);
 });
